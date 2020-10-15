@@ -38,6 +38,8 @@ export default {
 
     const data = {...request.body, images};
 
+    data.open_on_weekends = data.open_on_weekends === 'true';
+
     await OrphanageSchema.validate(data, {
       abortEarly: false,
     });
